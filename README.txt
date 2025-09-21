@@ -123,3 +123,19 @@ Development
   ruff check .
   black .
   mypy .
+
+License
+MIT — add a LICENSE file if needed.
+
+Contributing
+PRs and issues welcome! Please:
+1. Open an issue describing the problem or feature.
+2. Include minimal repro steps or tests.
+3. Keep commits focused and well-described.
+
+Roadmap
+- Guardrails around browser actions
+- Structured output schemas (Pydantic) for web tasks
+- Pluggable memory backends (SQLite/Redis)
+- More robust math and code routing heuristics
+- First-class evaluation harness (golden tests for vision/web)
