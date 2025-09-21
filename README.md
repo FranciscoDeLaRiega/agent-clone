@@ -165,29 +165,11 @@ INFO A2A agent ready on port 9000
 - **Task lifecycle**: On failure, finalize **once** (avoid both `update_status(final=True)` and `complete()`).
 - **Quota errors**: 429 `insufficient_quota` handled; show a friendly message or bubble up via `_fail()`.
 
-Run the suite:
-```bash
-pytest -q
-```
 
 ---
 
 ## 🐛 Common Issues
 
 - **429 `insufficient_quota`**: Add billing or use a project/key with quota; optionally switch to a cheaper model (e.g., `gpt-5-mini`) to test.
-- **“Task already in a terminal state”**: Don’t finalize twice in `_fail()`.
-- **“I don’t see an image”**: Router or payload didn’t include the image; ensure `_iter_image_parts()` is used and router accepts `file` or `image` kinds.
-- **Loguru showing `%s`**: Use `{}` or f-strings (Loguru doesn’t use printf style).
-
----
-
-## 🛠️ Development
-
-```bash
-uvicorn "FranciscoClone.__main__:create_app" --factory --reload
-ruff check .
-black .
-mypy .
-```
 
 ---
